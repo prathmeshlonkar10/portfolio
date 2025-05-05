@@ -5696,3 +5696,11 @@ html, body {
   .cert-link:hover {
     text-decoration: underline;
   }
+
+  .cert-image-full {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+  }
