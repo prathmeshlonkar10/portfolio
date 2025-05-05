@@ -5639,3 +5639,46 @@ html, body {
         height: 150px;
     }
 }
+
+/* For Certifications */
+.certifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 40px;
+  }
+  
+  .certification-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  }
+  
+  .cert-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 6px;
+    margin-right: 25px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+  }
+  
+  .cert-content h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .cert-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .cert-link:hover {
+    text-decoration: underline;
+  }
