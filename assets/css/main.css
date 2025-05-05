@@ -5640,43 +5640,57 @@ html, body {
     }
 }
 
-/* For Certifications */
+/* Certifications Section */
 .certifications-container {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 20px 40px;
+    padding: 2rem 1.5rem;
   }
   
-  .certification-item {
+  .cert-item {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
+    gap: 25px;
     background-color: #f9f9f9;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
   }
   
   .cert-image img {
-    width: 150px;
+    width: 280px;
     height: auto;
     border-radius: 6px;
-    margin-right: 25px;
+    border: 1px solid #ccc;
     object-fit: contain;
-    border: 1px solid #ddd;
   }
   
-  .cert-content h3 {
-    margin-top: 0;
-    font-size: 20px;
-    color: #333;
+  .cert-details {
+    flex: 1;
+  }
+  
+  .cert-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+  
+  .cert-details p {
+    margin: 0.3rem 0;
+    font-size: 1.05rem;
+    color: #555;
   }
   
   .cert-link {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 0.8rem;
     color: #007bff;
     text-decoration: none;
+    font-weight: 500;
   }
   
   .cert-link:hover {
