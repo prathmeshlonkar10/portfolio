@@ -5704,3 +5704,13 @@ html, body {
     margin-bottom: 1rem;
     object-fit: contain;
   }
+
+
+
+  .project-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+    margin: 40px 0;
+    opacity: 0.6;
+  }
