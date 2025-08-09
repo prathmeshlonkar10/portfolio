@@ -5462,7 +5462,7 @@ a img {
 
 /* General mobile fix for overflow */
 html, body {
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     max-width: 100vw;
 }
 
