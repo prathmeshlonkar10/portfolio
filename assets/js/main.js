@@ -114,4 +114,312 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         retina_detect: true
     });
+
+    // Initialize particles for contact section
+
+    particlesJS("particles-contact", {
+
+        particles: {
+
+            number: {
+
+                value: 25,
+
+                density: {
+
+                    enable: true,
+
+                    value_area: 800
+
+                }
+
+            },
+
+            color: {
+
+                value: "#ffffff"
+
+            },
+
+            shape: {
+
+                type: "circle",
+
+                stroke: {
+
+                    width: 0,
+
+                    color: "#000000"
+
+                }
+
+            },
+
+            opacity: {
+
+                value: 0.3,
+
+                random: true,
+
+                anim: {
+
+                    enable: true,
+
+                    speed: 1,
+
+                    opacity_min: 0.1,
+
+                    sync: false
+
+                }
+
+            },
+
+            size: {
+
+                value: 2,
+
+                random: true,
+
+                anim: {
+
+                    enable: true,
+
+                    speed: 2,
+
+                    size_min: 0.1,
+
+                    sync: false
+
+                }
+
+            },
+
+            line_linked: {
+
+                enable: true,
+
+                distance: 120,
+
+                color: "#ffffff",
+
+                opacity: 0.2,
+
+                width: 1
+
+            },
+
+            move: {
+
+                enable: true,
+
+                speed: 2,
+
+                direction: "none",
+
+                random: true,
+
+                straight: false,
+
+                out_mode: "out",
+
+                bounce: false,
+
+                attract: {
+
+                    enable: false,
+
+                    rotateX: 600,
+
+                    rotateY: 1200
+
+                }
+
+            }
+
+        },
+
+        interactivity: {
+
+            detect_on: "canvas",
+
+            events: {
+
+                onhover: {
+
+                    enable: true,
+
+                    mode: "grab"
+
+                },
+
+                onclick: {
+
+                    enable: true,
+
+                    mode: "push"
+
+                },
+
+                resize: true
+
+            },
+
+            modes: {
+
+                grab: {
+
+                    distance: 150,
+
+                    line_linked: {
+
+                        opacity: 0.5
+
+                    }
+
+                },
+
+                push: {
+
+                    particles_nb: 2
+
+                }
+
+            }
+
+        },
+
+        retina_detect: true
+
+    });
+
+    // Observe all elements with fade-in classes
+
+    const fadeElements = document.querySelectorAll('.fade-in, .fade-in-stagger');
+
+    fadeElements.forEach(el => observer.observe(el));
+
+    // Contact form functionality
+
+    const contactForm = document.getElementById('contactForm');
+
+    
+
+    if (contactForm) {
+
+        // Add fade-in animation to form fields
+
+        const formGroups = contactForm.querySelectorAll('.form-group');
+
+        formGroups.forEach((group, index) => {
+
+            group.style.opacity = '0';
+
+            group.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+
+                group.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+                group.style.opacity = '1';
+
+                group.style.transform = 'translateY(0)';
+
+            }, 200 * (index + 1));
+
+        });
+
+
+
+        // Form submission handling
+
+        contactForm.addEventListener('submit', function(e) {
+
+            const submitBtn = contactForm.querySelector('.submit-btn');
+
+            const originalText = submitBtn.innerHTML;
+
+            
+
+            // Show loading state
+
+            submitBtn.innerHTML = '<span>Sending...</span><i class="fa fa-spinner fa-spin"></i>';
+
+            submitBtn.disabled = true;
+
+            
+
+            // Let form submit naturally, but add timeout for UI feedback
+
+            setTimeout(() => {
+
+                // Show success message
+
+                const successDiv = document.createElement('div');
+
+                successDiv.className = 'form-success';
+
+                successDiv.innerHTML = '✅ Message sent successfully! I\'ll get back to you soon.';
+
+                contactForm.appendChild(successDiv);
+
+                
+
+                // Reset form
+
+                contactForm.reset();
+
+                
+
+                // Reset button
+
+                submitBtn.innerHTML = originalText;
+
+                submitBtn.disabled = false;
+
+                
+
+                // Remove success message after 5 seconds
+
+                setTimeout(() => {
+
+                    if (successDiv.parentNode) {
+
+                        successDiv.remove();
+
+                    }
+
+                }, 5000);
+
+            }, 2000);
+
+        });
+
+
+
+        // Enhanced input animations
+
+        const inputs = contactForm.querySelectorAll('input, textarea');
+
+        inputs.forEach(input => {
+
+            input.addEventListener('focus', function() {
+
+                this.parentElement.style.transform = 'scale(1.02)';
+
+            });
+
+            
+
+            input.addEventListener('blur', function() {
+
+                this.parentElement.style.transform = 'scale(1)';
+
+            });
+
+        });
+
+    }
+
+
 }, false);
